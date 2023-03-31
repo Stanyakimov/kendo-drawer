@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@progress/kendo-react-buttons": "^5.12.1",
+    "@progress/kendo-react-dropdowns": "^5.12.1",
+    "@progress/kendo-react-intl": "^5.12.1",
+    "@progress/kendo-react-progressbars": "^5.12.1",
+    "@progress/kendo-react-treeview": "^5.12.1",
+    "@progress/kendo-svg-icons": "^1.4.2",
+    "cldr-core": "^42.0.0",
+    "cldr-numbers-full": "^42.0.0",
+    "hammerjs": "^2.0.8",
+    "prop-types": "^15.8.1",
+    "react-router-dom": "^5.0.0",
+    "sass": "^1.60.0"
+  }
+}
