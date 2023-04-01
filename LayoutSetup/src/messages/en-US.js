@@ -2,6 +2,7 @@ export const enMessages = {
     "custom": {
         "teamEfficiency": "Team Efficiency",
         "teamMembers": "Team Members",
+        "campaigns": "Campaigns",
         "dashboard": "Dashboard",
         "planning": "Planning",
         "profile": "Profile",

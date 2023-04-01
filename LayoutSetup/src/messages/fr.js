@@ -2,6 +2,7 @@ export const frMessages = {
     "custom": {
         "teamEfficiency": "Efficacité de l'équipe",
         "teamMembers": "Membres de l'équipe",
+        "campaigns": "campagnes",
         "dashboard": "Tableau de bord",
         "planning": "Planification",
         "info": "Info",

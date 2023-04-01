@@ -2,6 +2,7 @@ export const esMessages = {
     "custom": {
         "teamEfficiency": "Eficiencia del equipo",
         "teamMembers": "Miembros del equipo",
+        "campaigns": "Campañas",
         "dashboard": "Tablero",
         "planning": "Planificación",
         "info": "Informacion",

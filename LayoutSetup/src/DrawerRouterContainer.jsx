@@ -5,7 +5,7 @@ import { Header } from './Header';
 import { withRouter } from 'react-router-dom';
 
 const items = [
-    { name: 'My Campaigns', icon: 'k-i-calendar', selected: true, route: '/' },
+    { name: 'campaigns', icon: 'k-i-grid', selected: true, route: '/' },
     // { name: 'Create Campaigns', icon: 'k-i-grid', route: '/create-campaign' },
     { separator: true },
     // { name: 'Social Feed', icon: 'k-i-user', route: '/social-feed' },

@@ -16,7 +16,7 @@ a {
     background-color: $background-color;
 
     .k-drawer {
-        box-shadow: 0 0 10px rgba(0,0,0,.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
         border-right-width: 0 !important;
     }
 
@@ -43,9 +43,7 @@ a {
         row-gap: 1em;
     }
 
-    .card-title {
-
-    }
+    .card-title {}
 
     .card-buttons {
         .k-button {
@@ -55,8 +53,10 @@ a {
 
     .card-ranges {
         .k-daterangepicker {
-            .k-textbox-container, .k-floating-label-container {
-                padding-top: 0; 
+
+            .k-textbox-container,
+            .k-floating-label-container {
+                padding-top: 0;
                 min-width: 105px;
             }
 
@@ -99,21 +99,19 @@ a {
         }
     }
 
- }
+}
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .card-container {
         margin: 25px;
         border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 
         &.grid {
             grid-template-columns: repeat(3, 1fr);
         }
 
-        .card-title {
-
-        }
+        .card-title {}
 
         .card-buttons {
             text-align: center;
@@ -155,7 +153,7 @@ a {
     }
 
     .hamburger-icon {
-        background-image:  url('./../assets/hamburger-icon.svg');
+        background-image: url('./../assets/hamburger-icon.svg');
         background-repeat: no-repeat;
         width: 20px;
         cursor: pointer;
@@ -189,6 +187,7 @@ a {
             flex-direction: row;
             align-items: center;
         }
+
         .vl {
             border-left: 1px solid $white;
             height: 25px;
@@ -204,7 +203,7 @@ a {
             flex: 0 0 auto;
             align-items: center;
         }
-        
+
         .k-dropdown {
             max-width: 90px;
             margin-left: 15px;
@@ -223,14 +222,17 @@ a {
     }
 
     .k-grid .k-virtual-content,
-    .k-grid .k-virtual-content > div {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+    .k-grid .k-virtual-content>div {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+
+        /* Firefox */
         &::-webkit-scrollbar {
             display: none;
         }
     }
-    
+
     .k-badge {
         z-index: 1
     }
@@ -242,7 +244,7 @@ a {
             margin-bottom: 0;
             float: left;
         }
-    
+
         .k-grid-toolbar .k-button {
             float: right;
         }
@@ -256,29 +258,35 @@ a {
         }
     }
 }
+
 // Planning page 
 .planning-page {
     .card-container {
         grid-template-columns: repeat(1, 1fr);
     }
-    .card-title{
+
+    .card-title {
         grid-column: 1 / -1;
     }
+
     .k-hbox {
         padding: 0 20px;
         background: transparent;
         align-items: center;
     }
+
     .k-card-title {
         font-size: 15px;
         margin-bottom: -6px;
         text-align: left;
     }
+
     .k-card-subtitle {
         margin-top: 0;
         text-transform: uppercase;
         font-size: 11px;
     }
+
     .disabled {
         opacity: 0.5;
     }
@@ -348,7 +356,7 @@ a {
     .k-form .k-form-buttons {
         justify-content: center;
 
-        & > * {
+        &>* {
             min-width: 140px;
         }
     }
@@ -370,17 +378,18 @@ a {
     }
 }
 
- @media (min-width: 768px) { 
+@media (min-width: 768px) {
     .profile-page {
         .k-form {
             margin: 0 auto;
             padding: 0;
         }
+
         .k-form .k-form-field {
             padding: 0;
         }
     }
- }
+}
 
 
 // Info page
@@ -388,13 +397,17 @@ a {
     background-color: $info-background;
     color: $white;
 
-    h1, h2, h3, .component-link {
-        font-family: Metric,Helvetica,Arial,sans-serif;
+    h1,
+    h2,
+    h3,
+    .component-link {
+        font-family: Metric, Helvetica, Arial, sans-serif;
     }
+
     a:not(.k-button) {
         color: $link-color;
     }
-    
+
     .content {
         padding-top: 40px;
         margin: 0 auto;
@@ -404,6 +417,7 @@ a {
 
     .kendoka {
         text-align: center;
+
         img {
             max-width: 280px;
         }
@@ -411,6 +425,7 @@ a {
 
     .section-1 {
         text-align: center;
+
         h1 {
             font-size: 48px;
             font-weight: bold;
@@ -477,7 +492,7 @@ a {
 
     .component-link {
         padding: 5px 0;
-        
+
         a {
             font-size: 20px;
         }
@@ -490,11 +505,12 @@ a {
     }
 }
 
-@media (min-width: 480px) { 
+@media (min-width: 480px) {
     .info-page {
         .content {
             padding: 40px 40px 0;
         }
+
         .kendoka {
             img {
                 max-width: 348px;
@@ -518,40 +534,46 @@ a {
                 }
             }
         }
+
         .section-3 {
             -webkit-columns: 3;
             column-count: 3;
         }
     }
 }
+
 @media (max-width: 480px) {
     .k-form-horizontal .k-form-field-wrap {
         max-width: 100%;
     }
-    
+
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .info-page {
         .content {
             padding: 120px 40px 0;
         }
+
         .kendoka {
             position: absolute;
             right: 0;
             top: 2em;
             text-align: left;
         }
+
         .section-1,
         .section-2 {
             text-align: left;
             padding: 0;
         }
+
         .section-3 {
             -webkit-columns: 4;
             column-count: 4;
             padding: 0;
         }
+
         .footer {
             background-size: cover;
         }

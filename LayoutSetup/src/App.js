@@ -1,4 +1,5 @@
-import React from 'react';  
+import React from 'react';
+
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import DrawerRouterContainer from './DrawerRouterContainer';
 import { AppContext } from './components/AppContext';
@@ -54,8 +55,8 @@ load(
 
 // Load the messages for each specific language
 loadMessages(esMessages, 'es');
-loadMessages(esMessages, 'fr');
-loadMessages(esMessages, 'en-US');
+loadMessages(frMessages, 'fr');
+loadMessages(enMessages, 'en-US');
 
 const App = () => {
   // Sets the current context state to the user - I should call my API on load and set the current user
