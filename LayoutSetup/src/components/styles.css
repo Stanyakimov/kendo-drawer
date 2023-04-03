@@ -1,0 +1,17 @@
+.social-interactions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    text-align: center;
+    padding-inline-start: 0px;
+}
+
+.social-interactions li {
+    margin-right: 3em;
+}
+
+.card-style {   
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
