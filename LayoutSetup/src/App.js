@@ -3,7 +3,7 @@ import React from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import DrawerRouterContainer from './DrawerRouterContainer';
 import { AppContext } from './components/AppContext';
-import Campaigns from './components/Campaigns';
+import Campaigns from './components/campaigns/Campaigns';
 
 import { countries } from './resources/countries';
 import { IntlProvider, load, LocalizationProvider, loadMessages } from '@progress/kendo-react-intl';
