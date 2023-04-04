@@ -1,13 +1,11 @@
 import * as React from 'react';
 
-import { campaigns } from '../resources/campaigns';
+import { campaigns } from '../../resources/campaigns';
 import {
     Card, CardHeader, CardTitle, CardBody, CardImage, CardFooter, CardSubtitle, CardActions,
 } from '@progress/kendo-react-layout';
 
 import { ChunkProgressBar } from '@progress/kendo-react-progressbars';
-
-import './styles.css';
 
 const Campaigns = () => {
 
