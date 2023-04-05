@@ -6,6 +6,8 @@ import { locales } from './resources/locales';
 import { DropDownList } from '@progress/kendo-react-dropdowns';
 import { Avatar } from '@progress/kendo-react-layout';
 import { AppContext } from './components/AppContext'
+import { Alert } from './components/campaigns/Alert';
+import { Link } from 'react-router-dom';
 
 import headerBg from './assets/header-bg.png';
 import userAvatar from './assets/user-avatar.jpg';
@@ -23,12 +25,12 @@ export const Header = (props) => {
     const imgRef = React.useRef(null);
     const hasImage = avatar && avatar.length > 0;
 
-    React.useEffect(
+React.useEffect(
         () => { // reads a file from the current file directory 
             if (hasImage) {
                 var reader = new FileReader();
 
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     imgRef.current.setAttribute('src', e.target.result)
                 }
 
@@ -46,9 +48,15 @@ export const Header = (props) => {
                 </div>
                 {/* The values come from message folder: custom.warehouse and custom.language */}
                 <div className="title">
-                    <h1>{localizationService.toLanguageString('custom.warehouse')}</h1> 
+                    <h1>{localizationService.toLanguageString('custom.warehouse')}</h1>
                 </div>
+                <Link to="/" style={{ color: '#FFFFFF', fontSize: '16px', fontFamily: 'Roboto' }}>About</Link>
                 <div className="settings">
+                    <div className="right-widget">
+                        <div className="alert-container">
+                            <Alert />
+                        </div>
+                    </div>
                     <span>{localizationService.toLanguageString('custom.language')}</span>
                     <DropDownList
                         textField={'locale'}

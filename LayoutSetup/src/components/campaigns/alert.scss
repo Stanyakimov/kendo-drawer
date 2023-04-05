@@ -1,0 +1,36 @@
+
+.right-widget {
+    float: right;
+    display: flex;
+  }
+
+.alert-container {
+    margin-right: 50px;
+     a {
+      color: #424242 !important;
+     }
+  }
+
+  .mark-button {
+    height: 30px;
+    width: 165px;
+    float: right;
+    border: solid 1px #FF6358;
+    color: #FF6358;
+    background-color: white;
+    right: 10px;
+  }
+
+  .message-container {
+    margin-top: 16px;
+    margin-left: .5em;
+    margin-bottom: .5em;
+    h1, h2 {
+      width: 300px;
+     }
+  }
+
+  .popup-content {
+    margin-top: 10px;
+  }
+  

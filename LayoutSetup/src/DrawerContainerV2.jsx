@@ -4,7 +4,6 @@ import { Drawer, DrawerContent } from '@progress/kendo-react-layout';
 import { registerForLocalization, provideLocalizationService }
     from '@progress/kendo-react-intl';
 import { Alert } from './components/campaigns/Alert';
-import { Button } from '@progress/kendo-react-buttons';
 import { Header } from './Header';
 
 
@@ -22,7 +21,6 @@ export const DrawerContainerV2 = (props) => {
     const location = useLocation();
     const [expanded, setExpanded] = React.useState(true);
     const [localizationService, setLocalizationService] = React.useState(null);
-    const [selected, setSelected] = React.useState(null);
 
 
     const handleClick = () => {
@@ -41,37 +39,16 @@ export const DrawerContainerV2 = (props) => {
         }
     };
 
-    // Similar to componentDidMount and componentDidUpdate:
-    useEffect(() => {
-        setLocalizationService(provideLocalizationService(this));
-        setSelected(setSelectedItem(location.pathname));
-    }, []);
-
+    setLocalizationService(provideLocalizationService(this)); // Results in bundle.js:64315 Uncaught Passed component - undefined is invalid.
+    const selected = setSelectedItem(location.pathname);
 
     return (
         <div>
             <Header
-                onButtonClick={this.handleClick} // on button click will expand or collaplse the drawer
-                page={localizationService.toLanguageString(`custom.${selected}`)} // selected the current language from the dropdown
-            // page={localizationService.toLanguageString(`custom.${selected}`)} // selected the current language from the dropdown
+                onButtonClick={handleClick} // on button click will expand or collaplse the drawer
+                page={`custom.${selected}`} // selected the current language from the dropdown
+                // page={localizationService.toLanguageString(`custom.${selected}`)} // selected the current language from the dropdown
             />
-            <div className="custom-toolbar">
-                <Button icon="menu" onClick={this.handleClick} />
-                <span className="overview">{selected === 'Campaigns' ? 'Overview' : selected}</span>
-                <div className="right-widget">
-                    <div className="alert-container">
-                        <Alert />
-                    </div>
-                    <Link to="/" style={{ color: '#424242', fontWeight: '400', fontSize: '14px', fontFamily: 'Roboto', marginTop: '3px' }}>About</Link>
-                </div>
-            </div>
-
-            <div classNmae='right-widget'>
-                <div className='alert-container'>
-                    <Alert />
-                </div>
-                <Link to="/home" style={{ color: '#424242', fontWeight: '400', fontSize: '14px', fontFamily: 'Roboto', marginTop: '3px' }}>Discover</Link>
-            </div>
             <Drawer
                 expanded={expanded}
                 position={'start'}
@@ -89,6 +66,5 @@ export const DrawerContainerV2 = (props) => {
         </div>
     )
 }
-// }
 
-registerForLocalization(DrawerContainerV2);
+registerForLocalization(DrawerContainerV2); // Results in bundle.js:19883 Warning: DrawerContainerV2: Function components do not support contextType.
