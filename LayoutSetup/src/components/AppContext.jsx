@@ -12,6 +12,7 @@ export const AppContext = React.createContext({
     isInPublicDirectory: false,
     biography: '',
     teamId: null,
+    isLoggedIn: true,
     onLanguageChange: () => {},
     onProfileChange: () => {}
 })

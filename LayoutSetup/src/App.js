@@ -72,7 +72,8 @@ const App = () => {
     country: countries[33].name,
     isInPublicDirectory: true,
     biography: '',
-    teamId: 1
+    teamId: 1,
+    isLoggedIn: true
   });
 
   const onLanguageChange = React.useCallback(

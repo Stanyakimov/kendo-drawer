@@ -20,7 +20,6 @@ export const DrawerContainerV2 = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [expanded, setExpanded] = React.useState(true);
-    const [localizationService, setLocalizationService] = React.useState(null);
 
 
     const handleClick = () => {
@@ -39,11 +38,12 @@ export const DrawerContainerV2 = (props) => {
         }
     };
 
-    setLocalizationService(provideLocalizationService(this)); // Results in bundle.js:64315 Uncaught Passed component - undefined is invalid.
+    // const localizationService = provideLocalizationService(this); // Results in bundle.js:64315 Uncaught Passed component - undefined is invalid.
     const selected = setSelectedItem(location.pathname);
 
     return (
         <div>
+
             <Header
                 onButtonClick={handleClick} // on button click will expand or collaplse the drawer
                 page={`custom.${selected}`} // selected the current language from the dropdown
