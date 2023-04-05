@@ -2,19 +2,18 @@ import * as React from 'react';
 
 import { campaigns } from '../../resources/campaigns';
 import {
-    Card, CardHeader, CardTitle, CardBody, CardImage, CardFooter, CardSubtitle, CardActions,
+    Card, CardHeader, CardTitle, CardBody, CardImage, CardFooter, CardSubtitle,
 } from '@progress/kendo-react-layout';
 
 import { ChunkProgressBar } from '@progress/kendo-react-progressbars';
 
 const Campaigns = () => {
     // sets the data, our will be loaded from the API()
-    const [data, setData] = React.useState(campaigns);
+    const [data] = React.useState(campaigns);
 
     const emptyStyles = {
         background: 'pink'
     };
-    const blueColor = `rgb(39, 47, 120)`;
     const progressStyles = {
         background: 'royalBlue'
     };
@@ -26,16 +25,16 @@ const Campaigns = () => {
     // This function doesn't use the internationalization service provided by kendo
     // We take the curent locale and we parse the date based on the globalization settings 
     function formatDate(date) {
-        var date = new Date(date);
+        var dateObject = new Date(date);
         var today = new Date();
 
         // request a weekday along with a long date
-        if (date.getFullYear() === today.getFullYear()) {
+        if (dateObject.getFullYear() === today.getFullYear()) {
             var options = { month: 'long', day: 'numeric' };
-            return date.toLocaleDateString("en-US", options);
+            return dateObject.toLocaleDateString("en-US", options);
         } else {
-            var options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return date.toLocaleDateString("en-US", options);
+            options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return dateObject.toLocaleDateString("en-US", options);
         }
     }
 

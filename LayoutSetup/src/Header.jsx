@@ -6,7 +6,7 @@ import { locales } from './resources/locales';
 import { DropDownList } from '@progress/kendo-react-dropdowns';
 import { Avatar } from '@progress/kendo-react-layout';
 import { AppContext } from './components/AppContext'
-import { Alert } from './components/campaigns/Alert';
+import { Alert } from './components/Campaigns/Alert';
 import { Link } from 'react-router-dom';
 
 import headerBg from './assets/header-bg.png';
@@ -19,7 +19,6 @@ export const Header = (props) => {
     // of what's happening when the language changes 
     const { avatar, localeId, onLanguageChange } = React.useContext(AppContext); // isLoggedIn
     const localizationService = useLocalization();
-    const render = true;
     // We use this value to create a dropdown list 
     const currentLanguage = locales.find(item => item.localeId === localeId);
 

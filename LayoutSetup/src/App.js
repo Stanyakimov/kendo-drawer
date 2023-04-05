@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 import { AppContext } from './components/AppContext';
-import Campaigns from './components/campaigns/Campaigns';
-import { Discover, Home } from './components/Home';
+import Campaigns from './components/Campaigns/Campaigns';
+import { Home } from './components/Home';
 import { Explore } from './components/Explore';
 
 import { countries } from './resources/countries';

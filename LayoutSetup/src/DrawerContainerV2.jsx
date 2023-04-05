@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useLocation, useNavigate, Outlet, Link } from 'react-router-dom';
+import React from 'react';
+import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 import { Drawer, DrawerContent } from '@progress/kendo-react-layout';
 import { useLocalization } from '@progress/kendo-react-intl';
 import { Header } from './Header';

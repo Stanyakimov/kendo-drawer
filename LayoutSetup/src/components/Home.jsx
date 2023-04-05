@@ -1,5 +1,4 @@
-import { DrawerContainerV2 } from "../DrawerContainerV2"
-import { Header } from "../Header"
+
 
 export const Home = () => {
   return (
