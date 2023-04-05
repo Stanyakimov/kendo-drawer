@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '@progress/kendo-theme-default';
+import { HashRouter } from 'react-router-dom';
 
 import './App.scss';
 // import * as serviceWorker from './serviceWorker'; // Service worker is not implemented at this stage
@@ -11,7 +12,9 @@ import './App.scss';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>
 );
 

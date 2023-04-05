@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { HashRouter, Switch, Route } from 'react-router-dom';
-import DrawerRouterContainer from './DrawerRouterContainer';
+import { Route, Routes } from 'react-router-dom';
 import { AppContext } from './components/AppContext';
 import Campaigns from './components/campaigns/Campaigns';
+import { Discover } from './components/Discover';
+import { Org } from './components/Org';
 
 import { countries } from './resources/countries';
 import { IntlProvider, load, LocalizationProvider, loadMessages } from '@progress/kendo-react-intl';
@@ -90,15 +91,14 @@ const App = () => {
     <div className="App">
       <LocalizationProvider language={contextState.localeId}> {/* responsible for formatting of dates and numbers */}
         <IntlProvider locale={contextState.localeId}>{/* responsible for translating messages */}
-          <AppContext.Provider value={{...contextState, onLanguageChange, onProfileChange}}>
-            <HashRouter>
-              <DrawerRouterContainer>
-                <Switch>
-                  <Route exact={true} path="/" component={Campaigns} />
-                </Switch>
-              </DrawerRouterContainer>
-            </HashRouter>
-          </AppContext.Provider> 
+          <AppContext.Provider value={{ ...contextState, onLanguageChange, onProfileChange }}>
+            <Routes>
+              <Route path="/" element={<Discover />} />
+              <Route path="/org" element={<Org />}>
+                <Route path="/org/campaigns" element={<Campaigns />} />
+              </Route>
+            </Routes>
+          </AppContext.Provider>
         </IntlProvider>
       </LocalizationProvider>
     </div>

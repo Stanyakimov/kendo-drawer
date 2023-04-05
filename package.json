@@ -10,7 +10,7 @@
     "cldr-numbers-full": "^42.0.0",
     "hammerjs": "^2.0.8",
     "prop-types": "^15.8.1",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^6.10.0",
     "sass": "^1.60.0"
   }
 }
