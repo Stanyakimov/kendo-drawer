@@ -8,7 +8,6 @@ import {
 import { ChunkProgressBar } from '@progress/kendo-react-progressbars';
 
 const Campaigns = () => {
-
     // sets the data, our will be loaded from the API()
     const [data, setData] = React.useState(campaigns);
 
@@ -43,6 +42,7 @@ const Campaigns = () => {
     return (
         <div id="Dashboard" className="dashboard-page main-content">
             <div className="card-container grid">
+
                 {data.map(cmp => (
                     // Recommended image size: 1920 x 1005 px
                     <Card className="card-style" key={cmp.id} orientation="vertical" style={{

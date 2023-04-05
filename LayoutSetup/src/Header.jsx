@@ -14,14 +14,15 @@ import userAvatar from './assets/user-avatar.jpg';
 
 export const Header = (props) => {
     const { onButtonClick } = props;
+    const { isLoggedIn } = props;
     // Use the context and take the avatar, the current language symbol and a function
     // of what's happening when the language changes 
-    const { avatar, localeId, isLoggedIn, onLanguageChange } = React.useContext(AppContext);
-    const localizationService = useLocalization(); // How does localization service knows which language has been choosen
+    const { avatar, localeId, onLanguageChange } = React.useContext(AppContext); // isLoggedIn
+    const localizationService = useLocalization();
     const render = true;
     // We use this value to create a dropdown list 
     const currentLanguage = locales.find(item => item.localeId === localeId);
-    
+
     const imgRef = React.useRef(null);
     const hasImage = avatar && avatar.length > 0;
 
@@ -43,14 +44,17 @@ export const Header = (props) => {
     return (
         <header className="header" style={{ backgroundImage: `url(${headerBg})` }}>
             <div className="nav-container">
-                <div className="menu-button">
-                    <span className={'k-icon k-i-menu'} onClick={onButtonClick} />
-                </div>
+                {isLoggedIn &&
+                    <>
+                        <div className="menu-button">
+                            <span className={'k-icon k-i-menu'} onClick={onButtonClick} />
+                        </div>
+                    </>}
+
                 {/* The values come from message folder: custom.warehouse and custom.language */}
                 <div className="title">
-                    <Link to="/" style={{ color: '#FFFFFF', fontSize: '16px', fontFamily: 'Roboto' }}>Discover</Link>
+                    <Link to="/" style={{ color: '#FFFFFF', fontSize: '16px', fontFamily: 'Roboto',  }}>Discover</Link>
                     {/* There's possibility to move the localization service title to the components rendered */}
-                    <h1>{localizationService.toLanguageString('custom.warehouse')}</h1>
                 </div>
 
                 {isLoggedIn &&
@@ -80,6 +84,15 @@ export const Header = (props) => {
                         </div>
                     </>
                 }
+                {!isLoggedIn &&
+                    <>
+                        <div className="settings">
+                            <div className="right-widget">
+                                <Link to="/login" style={{ color: '#FFFFFF', fontSize: '16px', fontFamily: 'Roboto', marginRight: '2em' }}>Log in</Link>
+                                <Link to="/login" style={{ color: '#FFFFFF', fontSize: '16px', fontFamily: 'Roboto', marginRight: '5em' }}>Sign up</Link>
+                            </div>
+                        </div>
+                    </>}
             </div>
         </header>
     );

@@ -1,0 +1,8 @@
+import { DrawerContainerV2 } from "../DrawerContainerV2"
+import { Header } from "../Header"
+
+export const Home = () => {
+  return (
+    <h1>here will be a marketing page</h1>
+  )
+}

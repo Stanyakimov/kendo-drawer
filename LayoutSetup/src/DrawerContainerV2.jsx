@@ -1,26 +1,28 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate, Outlet, Link } from 'react-router-dom';
 import { Drawer, DrawerContent } from '@progress/kendo-react-layout';
-import { registerForLocalization, provideLocalizationService }
-    from '@progress/kendo-react-intl';
-import { Alert } from './components/campaigns/Alert';
+import { useLocalization } from '@progress/kendo-react-intl';
 import { Header } from './Header';
-
 
 export const items = [
     {
         text: 'Campaigns',
         selected: true,
-        route: '/org/campaigns',
+        route: '/explore/campaigns',
         icon: 'k-i-grid'
+    },
+    {
+        route: '/',
+        disabled: true,
     }
 ];
 
 export const DrawerContainerV2 = (props) => {
+    const localizationService = useLocalization();
     const navigate = useNavigate();
     const location = useLocation();
-    const [expanded, setExpanded] = React.useState(true);
-
+    const [expanded, setExpanded] = React.useState(false);
+    const isLoggedIn = true;
 
     const handleClick = () => {
         setExpanded(!expanded);
@@ -43,11 +45,11 @@ export const DrawerContainerV2 = (props) => {
 
     return (
         <div>
-
             <Header
+                isLoggedIn={isLoggedIn}
                 onButtonClick={handleClick} // on button click will expand or collaplse the drawer
-                page={`custom.${selected}`} // selected the current language from the dropdown
-                // page={localizationService.toLanguageString(`custom.${selected}`)} // selected the current language from the dropdown
+                // page={`custom.${selected}`} // selected the current language from the dropdown
+                page={localizationService.toLanguageString(`custom.${selected}`)} // selected the current language from the dropdown
             />
             <Drawer
                 expanded={expanded}
@@ -67,4 +69,4 @@ export const DrawerContainerV2 = (props) => {
     )
 }
 
-registerForLocalization(DrawerContainerV2); // Results in bundle.js:19883 Warning: DrawerContainerV2: Function components do not support contextType.
+// registerForLocalization(DrawerContainerV2); // Results in bundle.js:19883 Warning: DrawerContainerV2: Function components do not support contextType.

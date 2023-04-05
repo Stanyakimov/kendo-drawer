@@ -3,8 +3,8 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AppContext } from './components/AppContext';
 import Campaigns from './components/campaigns/Campaigns';
-import { Discover } from './components/Discover';
-import { Org } from './components/Org';
+import { Discover, Home } from './components/Home';
+import { Explore } from './components/Explore';
 
 import { countries } from './resources/countries';
 import { IntlProvider, load, LocalizationProvider, loadMessages } from '@progress/kendo-react-intl';
@@ -94,9 +94,16 @@ const App = () => {
         <IntlProvider locale={contextState.localeId}>{/* responsible for translating messages */}
           <AppContext.Provider value={{ ...contextState, onLanguageChange, onProfileChange }}>
             <Routes>
-              <Route path="/" element={<Discover />} />
-              <Route path="/org" element={<Org />}>
-                <Route path="/org/campaigns" element={<Campaigns />} />
+              {/* Marketing Page - Stories of people with changed lives */}
+              <Route path="/" element={<Home />} />
+
+              {/* {The rf element introduces the drawer } */}
+              <Route path='/rf' element={<Home/>} />
+              {/* /explore is for the Donors + donators  */}
+              <Route path="/explore" element={<Explore />}>
+                  {/* Software - campaigns - to review your org campaigns*/}
+                  {/* Software - Start a campaigns - to start a new campaign */}
+                <Route path="/explore/campaigns" element={<Campaigns />} />
               </Route>
             </Routes>
           </AppContext.Provider>
